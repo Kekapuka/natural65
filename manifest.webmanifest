@@ -1,0 +1,35 @@
+{
+  "id": "/",
+  "name": "Природа65 — карта Сахалина",
+  "short_name": "Природа65",
+  "description": "Карта рыбалки, ягод и маршрутов Сахалина. Работает без интернета.",
+  "lang": "ru",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#234826",
+  "background_color": "#234826",
+  "categories": ["travel", "navigation", "sports"],
+  "icons": [
+    { "src": "/assets/img/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/img/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/img/icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/assets/img/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "SOS — экстренный экран",
+      "short_name": "SOS",
+      "description": "Координаты и номера экстренных служб, работает без интернета",
+      "url": "/sos",
+      "icons": [{ "src": "/assets/img/icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Справочник туриста",
+      "short_name": "Справочник",
+      "url": "/info",
+      "icons": [{ "src": "/assets/img/icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

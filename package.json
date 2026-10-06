@@ -1,0 +1,17 @@
+{
+  "name": "priroda65",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Priroda65 — offline-first map for tourists, fishermen and gatherers on Sakhalin",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "check:sw": "node scripts/check-sw-assets.js",
+    "tiles:extract": "node scripts/extract-tiles.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}

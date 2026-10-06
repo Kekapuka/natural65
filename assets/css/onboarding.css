@@ -1,0 +1,179 @@
+/* =====================================================================
+   Priroda65 — приветствие и дисклеймер при первом запуске
+   На телефоне — на весь экран, на компьютере — карточка по центру.
+   ===================================================================== */
+
+.onboarding {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: calc(16px + var(--safe-top)) 20px calc(20px + var(--safe-bottom));
+  border: 0;
+  color: var(--color-text);
+  background: var(--color-bg);
+  overflow-y: auto;
+}
+
+.onboarding[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.onboarding::backdrop {
+  background: var(--color-brand);
+}
+
+@media (min-width: 640px) {
+  .onboarding {
+    width: min(100% - 32px, 520px);
+    height: auto;
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 20px 28px 28px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-float);
+  }
+}
+
+.onboarding__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+}
+
+.onboarding__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.onboarding__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: width 160ms ease, background-color 160ms ease;
+}
+
+.onboarding__dot.is-active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--color-brand);
+}
+
+.onboarding__top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.onboarding__sos {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--color-cream);
+  background: var(--color-danger);
+  text-decoration: none;
+}
+
+.onboarding__step {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+/* Анимация только при переходе между шагами: первый шаг виден сразу,
+   иначе текст «проявляется» из opacity: 0 и откладывает LCP */
+.onboarding__step.is-entering {
+  animation: step-in 180ms ease-out;
+}
+
+.onboarding__logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+}
+
+.onboarding__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  color: var(--color-cream);
+  background: var(--color-brand);
+}
+
+.onboarding__title {
+  font-size: 1.625rem;
+  line-height: 1.2;
+}
+
+.onboarding__text {
+  font-size: 1.0625rem;
+}
+
+.onboarding__list,
+.onboarding__legal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.onboarding__list li {
+  position: relative;
+  padding-left: 28px;
+  font-weight: 600;
+}
+
+.onboarding__list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.45em;
+  width: 12px;
+  height: 7px;
+  border-left: 3px solid var(--color-brand);
+  border-bottom: 3px solid var(--color-brand);
+  transform: rotate(-45deg);
+}
+
+.onboarding__legal li {
+  padding: 12px 14px;
+  border-left: 4px solid var(--color-brand);
+  border-radius: 4px;
+  background: var(--color-surface);
+}
+
+.onboarding__actions {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.onboarding__actions .btn {
+  flex: 1 1 140px;
+}
+
+.btn--wide {
+  width: 100%;
+}
+
+@keyframes step-in {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: none; }
+}

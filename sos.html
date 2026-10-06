@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SOS — Природа65</title>
+  <meta name="description" content="Экстренный экран: ваши GPS-координаты крупным шрифтом и номера экстренных служб. Работает без интернета.">
+  <meta name="theme-color" content="#B3261E">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/img/icons/icon-192.png" type="image/png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/assets/css/sos.css">
+  <script defer src="/js/ui/sos.js"></script>
+</head>
+<body>
+  <header class="sos-bar">
+    <a class="sos-bar__back" href="/" data-i18n="sosPage.back">← К карте</a>
+    <h1 class="sos-bar__title">SOS</h1>
+  </header>
+
+  <main class="sos">
+    <section class="coords" aria-labelledby="coords-heading">
+      <h2 id="coords-heading" class="sos__label" data-i18n="sosPage.coordsTitle">Ваши координаты</h2>
+      <p class="coords__value" id="coords-dd" aria-live="polite">— , —</p>
+      <p class="coords__dms" id="coords-dms"></p>
+      <p class="coords__meta" id="coords-meta" data-i18n="sosPage.searching">Ищем сигнал GPS… Выйдите на открытое место.</p>
+      <div class="coords__actions">
+        <button type="button" class="sos-btn" id="coords-copy" disabled data-i18n="sosPage.copy">Скопировать</button>
+        <a class="sos-btn" id="coords-sms" href="sms:" aria-disabled="true" data-i18n="sosPage.sms">Отправить SMS</a>
+      </div>
+    </section>
+
+    <section class="phones" aria-labelledby="phones-heading">
+      <h2 id="phones-heading" class="sos__label" data-i18n="sosPage.phonesTitle">Экстренные службы</h2>
+      <a class="phone phone--main" href="tel:112">
+        <span class="phone__number">112</span>
+        <span class="phone__text" data-i18n="sosPage.phone112">Единый номер экстренных служб. Можно звонить при нулевом балансе и без SIM-карты</span>
+      </a>
+      <a class="phone" href="tel:101">
+        <span class="phone__number">101</span>
+        <span class="phone__text" data-i18n="sosPage.phone101">Пожарная охрана и спасатели МЧС</span>
+      </a>
+      <a class="phone" href="tel:102">
+        <span class="phone__number">102</span>
+        <span class="phone__text" data-i18n="sosPage.phone102">Полиция</span>
+      </a>
+      <a class="phone" href="tel:103">
+        <span class="phone__number">103</span>
+        <span class="phone__text" data-i18n="sosPage.phone103">Скорая помощь</span>
+      </a>
+    </section>
+
+    <section class="tips" aria-labelledby="tips-heading">
+      <h2 id="tips-heading" class="sos__label" data-i18n="sosPage.tipsTitle">Пока ждёте помощь</h2>
+      <ul class="tips__list">
+        <li data-i18n="sosPage.tip1">Продиктуйте диспетчеру координаты с этого экрана.</li>
+        <li data-i18n="sosPage.tip2">Если связи нет — поднимитесь выше или выйдите на открытое место и попробуйте снова.</li>
+        <li data-i18n="sosPage.tip3">Если вы заблудились, оставайтесь на месте: так вас быстрее найдут.</li>
+        <li data-i18n="sosPage.tip4">Экономьте заряд: уменьшите яркость экрана, закройте другие приложения.</li>
+      </ul>
+    </section>
+
+    <p class="sos__privacy" data-i18n="sosPage.privacy">Координаты определяются на телефоне и никуда не отправляются.</p>
+  </main>
+</body>
+</html>
