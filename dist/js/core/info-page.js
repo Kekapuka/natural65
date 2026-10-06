@@ -1,1 +1,0 @@
-import{initI18n as r,detectLang as t}from"../i18n/i18n.js";import{registerServiceWorker as i}from"../offline/sw-register.js";import{setupLanguageSwitchers as e}from"../ui/language-switcher.js";import{initAnalytics as o}from"../analytics/analytics.js";i(),r(t()).then(()=>{e(),o()});
